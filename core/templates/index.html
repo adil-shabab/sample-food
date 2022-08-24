@@ -15,23 +15,20 @@
 </head>
   <body>
       <div class="dropdown">
-             <input type="text" class="textbox"
-             placeholder="Dropdown Menu" readonly>
-            <div class="option">
                 <a href="{% url 'breakfast' %}">
-                    <div onclick="show('Break Fast')"><i class="fa-solid fa-utensils"></i>
+                    <button onclick="show('Break Fast')"><i class="fa-solid fa-utensils"></i>
                         Break Fast
-                      </div>
+                      </button>
                 </a>
                 <a href="{% url 'lunch' %}"> 
-                    <div onclick="show('Lunch')"><i class="fa-solid fa-utensils"></i>
+                    <button onclick="show('Lunch')"><i class="fa-solid fa-utensils"></i>
                         Lunch
-                    </div>
+                    </button>
                 </a>
                 <a href="{% url 'dinner' %}">
-                    <div onclick="show('Dinner')"><i class="fa-solid fa-utensils"></i>
+                    <button onclick="show('Dinner')"><i class="fa-solid fa-utensils"></i>
                         Dinner
-                  </div>
+                  </button>
                 </a>
             </div>
       </div>

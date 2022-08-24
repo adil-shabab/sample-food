@@ -4,6 +4,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+button{
+    padding: 5px 15px;
+    background: white;
+    borde-radius: 10px;
+    color:rgb(58,128,162);
+}
 body{
     position: relative;
 }

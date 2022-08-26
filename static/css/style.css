@@ -135,3 +135,19 @@ p{
     max-height: 300px;
     overflow: hidden;
 }
+.button{
+    padding: 5px 15px;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    background: rgb(58, 128, 162);
+}
+.logout{
+    position: absolute !important;
+    right: 35px !important;
+    top: 35px !important;
+    background: rgb(58, 128, 162);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+}

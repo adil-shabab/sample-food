@@ -1,3 +1,22 @@
+from unicodedata import category
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+
+class Food(models.Model):
+    image = models.TextField()
+    category = models.CharField(max_length=200)
+
+
+    def __str__(self):
+        return self.category
+
+
+
+class Order(models.Model):
+    category = models.CharField(max_length=150)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+    # def __str__(self):
+    #     return self.user

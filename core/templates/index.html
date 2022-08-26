@@ -11,30 +11,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://kit.fontawesome.com/f1c31f30b1.js" crossorigin="anonymous"></script>
-    <!-- <link rel="icon" href="/img/favicon.png"> -->
+    <link rel="icon" href="https://img.freepik.com/premium-vector/restaurant-logo-design-template_79169-56.jpg?w=740">
 </head>
   <body>
-      <div class="dropdown">
-             <input type="text" class="textbox"
-             placeholder="Dropdown Menu" readonly>
-            <div class="option">
-                <a href="{% url 'breakfast' %}">
-                    <div onclick="show('Break Fast')"><i class="fa-solid fa-utensils"></i>
-                        Break Fast
-                      </div>
-                </a>
-                <a href="{% url 'lunch' %}"> 
-                    <div onclick="show('Lunch')"><i class="fa-solid fa-utensils"></i>
-                        Lunch
-                    </div>
-                </a>
-                <a href="{% url 'dinner' %}">
-                    <div onclick="show('Dinner')"><i class="fa-solid fa-utensils"></i>
-                        Dinner
-                  </div>
-                </a>
-            </div>
-      </div>
+               
+    <a href="{% url 'logout' %}"><i class="logout fa-solid fa-power-off"></i></a>
+    
+    <div class="d-flex justify-content-center align-items-center flex-column">
+      <h4 class="mb-5">Welcome {{request.user}}</h4>
+      <div class="d-flex justify-content-center align-items-center">
+      
+        <a href="{% url 'breakfast' %}">
+            <button class="button rounded mr-3" onclick="show('Break Fast')"><i class="fa-solid fa-utensils"></i>
+              Break Fast
+            </button>
+        </a>
+        <a href="{% url 'lunch' %}"> 
+            <button class="button rounded mr-3" onclick="show('Lunch')"><i class="fa-solid fa-utensils"></i>
+              Lunch
+            </button>
+        </a>
+        <a href="{% url 'dinner' %}">
+            <button class="button rounded" onclick="show('Dinner')"><i class="fa-solid fa-utensils"></i>
+              Dinner
+          </button>
+        </a>
+</div>
+    </div>
+      
 
 
 

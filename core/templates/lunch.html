@@ -16,12 +16,12 @@
   <body>
 
     <div class="container">
-    <a href="{% url 'home' %}">
+      <a href="{% url 'home' %}">
         <div class="go-home d-flex justify-content-center align-items-center">
           <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_bxgjo2wa.json"  background="transparent"  speed="1"  style="width: 80px; height: 80px;"  loop autoplay></lottie-player>
         </div>
       </a>
-        <div class="row">
+      <div class="row">
             <div class="d-flex justify-content-center align-items-center col-xlg-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 {% comment %} <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_cXVf2b.json"  background="transparent"  speed="0.5"  style="width: 80%; height: 80%;"  loop autoplay></lottie-player> {% endcomment %}
                 <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_snmohqxj/lottie_step2/data.json"  background="transparent"  speed="0.5"  style="width: 80%; height: 80%;"  loop autoplay></lottie-player>
@@ -34,95 +34,18 @@
                 <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_80nu1g6c.json"  background="transparent"  speed="0.4"  style="width: 70px; height: 70px;"  loop autoplay></lottie-player>
               </div>
             </div>
-        </div>
+      </div>
 
 
         <div class="row mb-5">
+          {% for food in foods %}
           <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
             <div class="food">
-              <img src="https://img.freepik.com/free-photo/sambar-rice-sambar-sadam-one-pot-meal-from-south-indian-state-tamil-nadu-kerala_466689-75220.jpg?w=996&t=st=1661263034~exp=1661263634~hmac=2a10181a3e57001fbd2cc69214a0f29b0f5a38cfea55821950ee983d5002ba57" alt="">
-              <button class="buy-btn">Buy Now</button>
+              <img src="{{food.image}}" alt="">
+              <a href="{% url 'order' food.category %}"><button class="buy-btn">Buy Now</button></a>
             </div>
           </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/free-photo/paneer-butter-masala-cheese-cottage-curry-served-with-rice-laccha-paratha_466689-73715.jpg?w=996&t=st=1661263036~exp=1661263636~hmac=21b941f49fc2994e436f28f047b4829e0130c34cf0e29830ee9c4654b62f3249" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/free-photo/top-view-indian-food-assortment_23-2148747714.jpg?w=996&t=st=1661263038~exp=1661263638~hmac=d5a6a93dfe7898cfd282f9267b29e0d4126b9edee718e08b6adee6354f8cb9a6" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/premium-photo/paneer-curry_57665-7114.jpg?w=900" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/free-photo/indian-delicious-roti-assortment_23-2149073328.jpg?w=1060&t=st=1661265538~exp=1661266138~hmac=0a4a58b926718882cbcc1d3efd8d915717baed6d28317b010eccead4b69a5f45" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/free-photo/chicken-steak-with-lemon-tomato-chili-carrot-white-plate_1150-25888.jpg?w=996&t=st=1661265535~exp=1661266135~hmac=c5bcd609799284ba22606bb5782d607555e5ce30007bfde34efe7a546f68110f" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/free-photo/curry-fried-rice_1339-1815.jpg?w=996&t=st=1661265534~exp=1661266134~hmac=17940fc0b938443b36dccb269bcb3bad9703c6e8e8d40ce8db8e9fa6e9480cb2" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/premium-photo/smoked-trout-with-rice-pumpkin-pumpkin-decoration-from-chef_681059-69.jpg?w=996" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/premium-photo/indian-food-kadai-paneer-thali_55610-1982.jpg?w=996" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/free-photo/plate-salad-with-strawberry-isolated-white-background_185193-89199.jpg?w=996&t=st=1661265527~exp=1661266127~hmac=3007fc1c13ba52d9273c99c8528eb91e5b4f167fdba9f6bc834e5941d65fdb3a" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/free-photo/top-view-bowls-with-indian-food_23-2148723454.jpg?w=996&t=st=1661265518~exp=1661266118~hmac=1a1abdf7cd978bc41c98c1a30739882656fd41f48be4c5bc808857f830cad50e" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/premium-photo/assorted-indian-recipes-food-various_79295-7226.jpg?w=1060" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/free-photo/curry-with-chicken-onions-indian-food-asian-cuisine-top-view_2829-6243.jpg?w=996&t=st=1661265510~exp=1661266110~hmac=2a9a434a06535592284c3e3a765194fc6b6e12ea02f491bbfbbfe171b01c77dc" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <div class="food">
-              <img src="https://img.freepik.com/free-photo/indian-meal-with-rice-sari_23-2148747624.jpg?w=996&t=st=1661265511~exp=1661266111~hmac=2c488db503ae139eb2fb042acd1a7ac844109f1ea8e53cc759237d7a97606d6a" alt="">
-              <button class="buy-btn">Buy Now</button>
-            </div>
-          </div>
+          {% endfor %}
         </div>
     </div>
 

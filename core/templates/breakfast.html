@@ -37,13 +37,15 @@
 
 
         <div class="row mb-5">
+          {% for food in foods %}
           <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
             <div class="food">
-              <img src="https://img.freepik.com/free-photo/aloo-paratha-gobi-paratha-also-known-as-potato-cauliflower-stuffed-flatbread-dish-originating-from-indian-subcontinent_466689-76134.jpg?w=996&t=st=1661263048~exp=1661263648~hmac=5bac9045e03fbdf53f31cc3dbb87cb30f487cf2e5438eba413a9ea1f62e7daa7" alt="">
-              <button class="buy-btn">Buy Now</button>
+              <img src="{{food.image}}" alt="">
+              <a href="{% url 'order' food.category %}"><button class="buy-btn">Buy Now</button></a>
             </div>
           </div>
-          <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
+          {% endfor %}
+          <!-- <div class="column mt-3 p-1 col-xlg-4 col-lg-4 col-md-4 col-sm-12 col-12">
             <div class="food">
               <img src="https://img.freepik.com/free-photo/vada-pav-wada-pao-is-indian-desi-burger-is-roadside-fast-food-dish-from-maharashtra-selective-focus_466689-74007.jpg?w=996&t=st=1661264897~exp=1661265497~hmac=2f92366ea4ccbb5ca8754d7f715e8e4dc9b189cc34193ee6a465a32f74f7c273" alt="">
               <button class="buy-btn">Buy Now</button>
@@ -132,7 +134,7 @@
               <img src="https://img.freepik.com/free-photo/aloo-paratha-gobi-paratha-also-known-as-potato-cauliflower-stuffed-flatbread-dish-originating-from-indian-subcontinent_466689-76173.jpg?w=996&t=st=1661264896~exp=1661265496~hmac=96db8d9626c5136b0b1eaf1262bf61bbb1da4de51a9413cc1ded61ac0526d0d1" alt="">
               <button class="buy-btn">Buy Now</button>
             </div>
-          </div>
+          </div> -->
         </div>
     </div>
 

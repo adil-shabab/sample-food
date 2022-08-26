@@ -25,7 +25,7 @@
             </div>
             <div class="col-3 d-flex flex-column justify-content-center align-items-center">
                 <input type="number" class="input">
-                <p class="price mt-4 ">140</p>
+                <p class="price mt-4 ">&#8377; 140</p>
             </div>
             <div class="col-3 d-flex justify-content-center align-items-center">
                 <h1 class="total"><button onclick="change()" class="check btn btn-success">Check Price</button></h1>
@@ -41,8 +41,7 @@
             console.log(input)
             let price = document.querySelector('.price')
             let amount = input * 140
-            price.innerHTML = amount
-
+            price.innerHTML = '&#8377; ' + amount
         }
     </script>
 

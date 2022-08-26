@@ -88,3 +88,12 @@ def order(request, category):
     order = Order(user = request.user, category=category)
     order.save()
     return redirect('home')
+
+
+@login_required(login_url='login')
+def orderpage(request, pk):
+    food = Food.objects.get(id = pk)
+    context = {
+        'food': food
+    }
+    return render(request, 'orderpage.html', context)

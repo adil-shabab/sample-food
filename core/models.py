@@ -16,6 +16,7 @@ class Food(models.Model):
 class Order(models.Model):
     category = models.CharField(max_length=150)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=True)
 
 
     # def __str__(self):

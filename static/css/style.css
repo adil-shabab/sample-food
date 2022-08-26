@@ -151,3 +151,11 @@ p{
     padding: 10px;
     border-radius: 50%;
 }
+img{
+    width: 100% !important;
+    border-radius: 15px;
+}
+input{
+    height: 45px;
+    border-radius: 8px;
+}

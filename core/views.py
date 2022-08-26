@@ -87,7 +87,7 @@ def order(request, category):
     category = category
     order = Order(user = request.user, category=category)
     order.save()
-    return redirect('home')
+    return render(request, 'success.html')
 
 
 @login_required(login_url='login')

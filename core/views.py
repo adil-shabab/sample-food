@@ -83,9 +83,9 @@ def dinner(request):
 
 
 @login_required(login_url='login')
-def order(request, category):
-    category = category
-    order = Order(user = request.user, category=category)
+def order(request, pk):
+    food = Food.objects.get(id = pk)
+    order = Order(user = request.user,  category=food.category, food=food.image)
     order.save()
     return render(request, 'success.html')
 
@@ -97,3 +97,20 @@ def orderpage(request, pk):
         'food': food
     }
     return render(request, 'orderpage.html', context)
+
+
+
+def adminpage(request):
+    order = Order.objects.all()
+    context = {
+        "orders" : order
+    }
+    return render(request, 'adminpage.html', context)
+
+
+def singleorder(request):
+    order = Order.objects.filter(user = request.user)
+    context = {
+        "orders" : order
+    }
+    return render(request, 'orders.html', context)

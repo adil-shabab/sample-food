@@ -17,6 +17,9 @@
                
     <a href="{% url 'logout' %}"><i class="logout fa-solid fa-power-off"></i></a>
     
+    {% if user.is_superuser %}
+      <div></div>
+    {% else %}
     <div class="d-flex justify-content-center align-items-center flex-column">
       <h4 class="mb-5">Welcome {{request.user}}</h4>
       <div class="d-flex justify-content-center align-items-center">
@@ -38,6 +41,7 @@
         </a>
       </div>
     </div>
+    {% endif %}
     
     {% if user.is_superuser %}
     <div class="mt-5">

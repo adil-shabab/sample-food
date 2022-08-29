@@ -16,6 +16,11 @@
   <body>
 
     <div class="container row mt-5">
+      <a href="{% url 'home' %}">
+        <div class="go-home d-flex justify-content-center align-items-center">
+          <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_bxgjo2wa.json"  background="transparent"  speed="1"  style="width: 80px; height: 80px;"  loop autoplay></lottie-player>
+        </div>
+      </a>
         {% for order in orders %}
         <div class="px-2 col-xlg-4 col-lg-4 col-md-4 col-sm-6 col-12">
             <div class="w-100 shadow rounded py-3 px-3">
@@ -25,12 +30,14 @@
                 <p>{{order.user}}</p>
                 <p>{{order.category}}</p>
                 {% if user.is_superuser %}
-                  {% if order.isAccepted %}
                   <a href="{% url 'decline' order.id %}"><button class="button">Decline</button></a>
-                  {% else %}
+                  {% if order.isAccepted %}
+                  <a href=""><button class="button">Accepted</button></a>
+                  {% else %}  
                   <a href="{% url 'accept' order.id %}"><button class="button">Accept</button></a>
                   {% endif %}
                 {% endif %}
+
             </div>
         </div>
         {% endfor %}

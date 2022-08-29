@@ -16,6 +16,11 @@
   <body>
 
     <div class="container row mt-5">
+      <a href="{% url 'home' %}">
+        <div class="go-home d-flex justify-content-center align-items-center">
+          <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_bxgjo2wa.json"  background="transparent"  speed="1"  style="width: 80px; height: 80px;"  loop autoplay></lottie-player>
+        </div>
+      </a>
         {% for order in orders %}
         <div class="px-2 col-xlg-4 col-lg-4 col-md-4 col-sm-6 col-12">
             <div class="w-100 shadow rounded py-3 px-3">

@@ -5,6 +5,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('breakfast', views.breakfast, name='breakfast'),
     path('lunch', views.lunch, name='lunch'),
+    path('accepted', views.accepted, name='accepted'),
     path('accept/<str:pk>', views.accept, name='accept'),
     path('decline/<str:pk>', views.decline, name='decline'),
     path('dinner', views.dinner, name='dinner'),

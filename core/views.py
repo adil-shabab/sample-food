@@ -120,7 +120,7 @@ def accept(request,pk):
     order = Order.objects.get(id = pk)
     order.isAccepted = True
     order.save()
-    return redirect('adminpage')
+    return redirect('accepted')
 
 
 def decline(request,pk):
@@ -128,3 +128,11 @@ def decline(request,pk):
     order.isAccepted = False
     order.save()
     return redirect('adminpage')
+
+
+def accepted(request):
+    order = Order.objects.filter(isAccepted=True)
+    context = {
+        'orders': order
+    }
+    return render(request, 'accepted.html', context)

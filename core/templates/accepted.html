@@ -32,7 +32,7 @@
                     <p>{{order.user}}</p>
                     <p>{{order.category}}</p>
                     {% if user.is_superuser %}
-                      <a href="{% url 'decline' order.id %}"><button class="button">Decline</button></a>
+                      <a href="{% url 'decline' order.id %}"><button class="button">Order Placed</button></a>
                     {% endif %}
                 </div>
                 </div>

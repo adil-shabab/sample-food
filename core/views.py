@@ -99,7 +99,7 @@ def orderpage(request, pk):
     return render(request, 'orderpage.html', context)
 
 
-
+@login_required(login_url='login')
 def adminpage(request):
     order = Order.objects.all()
     context = {
@@ -107,7 +107,7 @@ def adminpage(request):
     }
     return render(request, 'adminpage.html', context)
 
-
+@login_required(login_url='login')
 def singleorder(request):
     order = Order.objects.filter(user = request.user)
     context = {

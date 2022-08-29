@@ -17,20 +17,16 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-2 d-flex justify-content-center align-items-center">
+            <div class="col-3 d-flex justify-content-center align-items-center">
                 <h1>{{food.category}}</h1>
             </div>
-            <div class="col-2 d-flex justify-content-center align-items-center">
+            <div class="col-3 d-flex justify-content-center align-items-center">
                 <img src="{{food.image}}" alt="">
             </div>
-            <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-3 d-flex flex-column justify-content-center align-items-center">
                 <input type="number" class="input">
-                <p class="price mt-4 ">&#8377; 140</p>
             </div>
-            <div class="col-2 d-flex justify-content-center align-items-center">
-                <h1 class="total"><button onclick="change()" class="check btn btn-success">Check Price</button></h1>
-            </div>
-            <div class="col-2 d-flex justify-content-center align-items-center">
+            <div class="col-3 d-flex justify-content-center align-items-center">
                 <a href="{% url 'order' food.id %}"><button class="button">Place Order</button></a>
             </div>
         </div>

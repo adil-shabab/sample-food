@@ -87,7 +87,7 @@ def order(request, pk):
     food = Food.objects.get(id = pk)
     order = Order(user = request.user,  category=food.category, food=food.image)
     order.save()
-    return render(request, 'success.html')
+    return redirect('home')
 
 
 @login_required(login_url='login')
@@ -114,3 +114,17 @@ def singleorder(request):
         "orders" : order
     }
     return render(request, 'orders.html', context)
+
+
+def accept(request,pk):
+    order = Order.objects.get(id = pk)
+    order.isAccepted = True
+    order.save()
+    return redirect('adminpage')
+
+
+def decline(request,pk):
+    order = Order.objects.get(id = pk)
+    order.isAccepted = False
+    order.save()
+    return redirect('adminpage')

@@ -24,6 +24,13 @@
                 </div>
                 <p>{{order.user}}</p>
                 <p>{{order.category}}</p>
+                {% if user.is_superuser %}
+                  {% if order.isAccepted %}
+                  <a href="{% url 'decline' order.id %}"><button class="button">Decline</button></a>
+                  {% else %}
+                  <a href="{% url 'accept' order.id %}"><button class="button">Accept</button></a>
+                  {% endif %}
+                {% endif %}
             </div>
         </div>
         {% endfor %}

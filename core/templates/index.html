@@ -41,7 +41,7 @@
     
     {% if user.is_superuser %}
     <div class="mt-5">
-      <p class="mt-5">You are Admin</p>
+      <p class="mt-5 fs-4">You are Admin</p>
       <a href="{% url 'adminpage' %}"><button class="button">See All Orders</button></a>
     </div>
     {% else %}

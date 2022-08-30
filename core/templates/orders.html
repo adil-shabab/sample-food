@@ -29,6 +29,11 @@
                 </div>
                 <p>user: {{order.user}}</p>
                 <p>category: {{order.category}}</p>
+                {% if order.isAccepted %}
+                <button class="button">Order Accepted</button>
+                {% else %}
+                <button class="button">Order Pending</button>
+                {% endif %}
             </div>
         </div>
         {% endfor %}

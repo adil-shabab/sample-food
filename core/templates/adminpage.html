@@ -29,14 +29,7 @@
                 </div>
                 <p>{{order.user}}</p>
                 <p>{{order.category}}</p>
-                {% if user.is_superuser %}
-                  <a href="{% url 'decline' order.id %}"><button class="button">Decline</button></a>
-                  {% if order.isAccepted %}
-                  <a href=""><button class="button">Accepted</button></a>
-                  {% else %}  
-                  <a href="{% url 'accept' order.id %}"><button class="button">Accept</button></a>
-                  {% endif %}
-                {% endif %}
+                <p>Quanity: {{order.quantity}}</p>
 
             </div>
         </div>

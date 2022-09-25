@@ -16,7 +16,8 @@
   <body class="d-flex justify-content-center align-items-center">
 
     <div class="container">
-        <div class="row">
+        <form action="" method="post" class="row">
+            {% csrf_token %}
             <div class="col-3 d-flex justify-content-center align-items-center">
                 <h1>{{food.category}}</h1>
             </div>
@@ -24,12 +25,12 @@
                 <img src="{{food.image}}" alt="">
             </div>
             <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                <input type="number" class="input">
+                <input name="quanitiy" type="number" class="input">
             </div>
             <div class="col-3 d-flex justify-content-center align-items-center">
-                <a href="{% url 'order' food.id %}"><button class="button">Place Order</button></a>
+                <a "><button type="submit" class="button">Place Order</button></a>
             </div>
-        </div>
+        </form>
     </div>
 
 

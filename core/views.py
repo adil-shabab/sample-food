@@ -84,15 +84,24 @@ def dinner(request):
 
 @login_required(login_url='login')
 def order(request, pk):
-    food = Food.objects.get(id = pk)
-    order = Order(user = request.user,  category=food.category, food=food.image)
-    order.save()
-    return redirect('home')
+    if request.method == 'GET':
+            food = Food.objects.get(id = pk)
+            quantity = request.GET.get('quanitiy')
+            print(quantity)
+            order = Order(user = request.user,  category=food.category, food=food.image)
+            order.save()
+            return redirect('home')
 
 
 @login_required(login_url='login')
 def orderpage(request, pk):
     food = Food.objects.get(id = pk)
+    if request.method == 'POST':
+            food = Food.objects.get(id = pk)
+            quantity = request.POST.get('quanitiy')
+            order = Order(user = request.user,  category=food.category, food=food.image, quantity=quantity)
+            order.save()
+            return redirect('home')
     context = {
         'food': food
     }
@@ -115,24 +124,3 @@ def singleorder(request):
     }
     return render(request, 'orders.html', context)
 
-
-def accept(request,pk):
-    order = Order.objects.get(id = pk)
-    order.isAccepted = True
-    order.save()
-    return redirect('accepted')
-
-
-def decline(request,pk):
-    order = Order.objects.get(id = pk)
-    order.isAccepted = False
-    order.save()
-    return redirect('adminpage')
-
-
-def accepted(request):
-    order = Order.objects.filter(isAccepted=True)
-    context = {
-        'orders': order
-    }
-    return render(request, 'accepted.html', context)
